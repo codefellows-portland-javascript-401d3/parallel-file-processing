@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/GeoffreyEmerson/cf401-lab-parallel-file-processing#readme",
   "devDependencies": {
+    "chokidar-cli": "^1.2.0",
     "mocha": "^2.5.3"
   }
 }
