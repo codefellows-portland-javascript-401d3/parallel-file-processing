@@ -1,5 +1,3 @@
-//const fs = require('fs');
-//const path = require('path');
 const assert = require('assert');
 const getAllObjects = require('../getAllObjects');
 
@@ -19,9 +17,9 @@ describe('get dogs', ()=>{
 
   });
 
-  it('retrieves select dogs in the same order', done=>{
-
-  });
+  // it('retrieves select dogs in the same order', done=>{
+  //
+  // });
 //
 //   it('stores a dog'. ()=>{
 //
