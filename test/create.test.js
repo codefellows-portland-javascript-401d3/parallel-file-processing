@@ -1,11 +1,14 @@
 const assert = require('assert');
 const Store = require('../lib/create');
 const create = Store.create;
-const read = require('../lib/read');
+const read = require('../lib/read').read;
 const fs = require('fs');
 
-const testData = 'test_pidgey';
-const testType = 'test_flying';
+const testData = {
+    name: 'Pidgey',
+    type: 'flying'
+  };
+const testType = 'test_type';
 const testPath = 'storage/';
 
 describe('Create and Read', function() {
@@ -31,10 +34,10 @@ describe('Create and Read', function() {
   });
 
   it('correctly stores data', function(done) {
-    read('test_flying/test_flying0', function(err,data) {
+    read('test_type/test_type0.json', function(err,data) {
       if(err) throw new Error(err);
       else {
-        if (data != testData) throw new Error('Does not compute.');
+        assert.deepEqual(data, testData, 'Does not compute.');
         done();
       };
     });
