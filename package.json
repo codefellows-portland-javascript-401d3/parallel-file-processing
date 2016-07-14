@@ -7,7 +7,10 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "pretest": "npm run lint",
+    "test": "mocha",
+    "watch": "mocha -w",
+    "lint": "eslint **/*.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,7 @@
   },
   "homepage": "https://github.com/deeheber/parallel-file-processing#readme",
   "devDependencies": {
+    "eslint": "^3.0.1",
     "mocha": "^2.5.3"
   }
 }

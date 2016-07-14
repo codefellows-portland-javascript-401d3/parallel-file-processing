@@ -1,31 +1,32 @@
-const fs = require('fs');
-//const path = require('path');
 const assert = require('assert');
-const getAllObjects = require('../getAllObjects');
+const getAllObjects = require('../lib/getAllObjects');
+const getItem = require('../lib/getItem');
 
 describe('get dogs', ()=>{
 
-  var dogContents = [ { name: 'dog 1', id: '1', type: 'dog' },
+  var allDogs = [ { name: 'dog 1', id: '1', type: 'dog' },
   { name: 'dog2', id: '2', type: 'dog' },
+  { name: 'dog3', id: '3', type: 'dog' },
+  {name : 'dog 4', id : '4', type : 'dog'}];
+
+  var someDogs = [ { name: 'dog2', id: '2', type: 'dog' },
+  { name: 'dog 1', id: '1', type: 'dog' },
   { name: 'dog3', id: '3', type: 'dog' } ];
 
   it('gets all dogs', done=>{
-    getAllObjects( __dirname + '/../dogs', (error, fileContents)=>{
-      if (error) return done(error);
-      assert.deepEqual(fileContents, dogContents);
+    getAllObjects( __dirname + '/../dog', (error, fileContents)=>{
+      if(error) return done(error);
+      assert.deepEqual(fileContents, allDogs);
       done();
     });
-
   });
-//
-//   it('retrieves dogs in the same order'. ()=>{
-//
-//   });
-//
-//   it('stores a dog'. ()=>{
-//
-//   });
-//
-});
 
-//getAllObjects('../dogs');
+  it('retrieves select dogs in the same order', done=>{
+    getItem('"dog2", "dog1", "dog3"', (error, fileContents)=>{
+      if(error) return done(error);
+      assert.deepEqual(fileContents, someDogs);
+      done();
+    });
+  });
+
+});
