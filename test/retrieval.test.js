@@ -3,6 +3,7 @@ const assert = require('chai').assert;
 const path = require('path');
 const retrieval = require('../lib/retrieval');
 
+
 describe('retreives files from data and in order', () => {
 	it('gets the files', done => {
 
