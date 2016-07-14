@@ -56,18 +56,13 @@ describe('Lab Technical Requirements', function() {
   });
 
   it('returns ID of object if duplicate', function() {
+    // changes not done.
 
+    // necessary changes:
+    // create method would need to pull a list of all current files under that type.
+    // iterate over each file found and check for deep equality.
+    // return file name if equality found. Otherwise continue with method as is.
   });
-
-  // it('correctly stores data', function(done) {
-  //   read('test_flying/test_flying0.json', function(err,data) {
-  //     if(err) throw new Error(err);
-  //     else {
-  //       if (data != testData) throw new Error('Does not compute.');
-  //       done();
-  //     };
-  //   });
-  // });
 
   after(function() {
     fs.readdir(Store.path, function(err,folders) {
