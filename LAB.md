@@ -18,7 +18,7 @@ Your file store should:
 * Support the following API calls:
     * Retrieve all objects of a given resource type
     * Retrieve an array of objects from an array id's in same order
-    * Store an object (returns id if already part of object)
+    * Store an object (returns id if not already part of object)
 
 API calls should be implemented _in parallel_ when possible.
 
