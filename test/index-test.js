@@ -57,11 +57,6 @@ describe('parallel-file-processing', () =>{
     });
   });
 
-  it('retrieves resources in particular order based on array of id\'s', (done) => {
-
-    done();
-  });
-
   after(done => {
     directories.forEach(function(directory) {
       rimraf(path.join(__dirname, '/animals', directory), function (err) {
