@@ -3,6 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const parallel = require('../lib/index.js');
 const chokidar = require('chokidar');
+const rimraf = require('rimraf');
+
+const directories = ['cat', 'dog', 'snake'];
 
 var watcher = chokidar.watch(path.join(__dirname, '../lib/animals'), {
   ignored: /[\/\\]\./,
@@ -10,9 +13,7 @@ var watcher = chokidar.watch(path.join(__dirname, '../lib/animals'), {
 });
 
 
-//retrieves resources errors but I can't figure out why
 //stores resources with a unique id needs to loop through file names to check for uniqueness
-
 describe('parallel-file-processing', () =>{
 
   it('creates directory structure and seeds files', (done) => {
@@ -61,4 +62,13 @@ describe('parallel-file-processing', () =>{
     done();
   });
 
+  after(done => {
+    directories.forEach(function(directory) {
+      rimraf(path.join(__dirname, '/animals', directory), function (err) {
+        if (err) return done(err);
+        console.log(`deleting ${directory} directory`);
+      });
+    });
+    done();
+  });
 });
