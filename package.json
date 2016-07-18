@@ -1,0 +1,29 @@
+{
+  "name": "parallel-file-processing",
+  "version": "1.0.0",
+  "description": "async file processing",
+  "main": "./lib/index.js",
+  "scripts": {
+    "pretest": "npm run lint",
+    "test": "mocha",
+    "watch": "mocha -w",
+    "lint": "eslint **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronbini/parallel-file-processing.git"
+  },
+  "author": "Aaron Bini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronbini/parallel-file-processing/issues"
+  },
+  "homepage": "https://github.com/aaronbini/parallel-file-processing#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chokidar": "^1.6.0",
+    "eslint": "^3.0.1",
+    "mocha": "^2.5.3",
+    "rimraf": "^2.5.3"
+  }
+}
